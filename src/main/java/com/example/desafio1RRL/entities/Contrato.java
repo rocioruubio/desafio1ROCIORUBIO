@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -67,7 +68,7 @@ public class Contrato {
 	}
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CLIENTE")
+	@JoinColumn(name = "ID_CLIENTE", nullable = false)
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -75,7 +76,4 @@ public class Contrato {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
-	
-	
 }

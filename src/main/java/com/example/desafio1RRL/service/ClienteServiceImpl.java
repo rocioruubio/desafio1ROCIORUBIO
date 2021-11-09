@@ -1,15 +1,12 @@
 package com.example.desafio1RRL.service;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
 import com.example.desafio1RRL.dao.ClienteDAOI;
 import com.example.desafio1RRL.entities.Cliente;
 

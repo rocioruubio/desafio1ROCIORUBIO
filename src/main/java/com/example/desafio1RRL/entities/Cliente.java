@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 @Table(name = "CLIENTE")
 public class Cliente {
 	
-	private Long id;
+	private Long id_cliente;
 	
 	private String nombre;
 	
@@ -33,11 +34,11 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_CLIENTE", precision = 15)
 	public Long getId() {
-		return id;
+		return id_cliente;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.id_cliente = id;
 	}
 	
 	@Column(name = "NOMBRE", precision = 50)
@@ -76,7 +77,7 @@ public class Cliente {
 		this.dni = dni;
 	}
 	
-	@OneToMany (cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	public List<Contrato> getContratos() {
 		return contratos;
 	}
@@ -84,8 +85,4 @@ public class Cliente {
 	public void setContratos(List<Contrato> contratos) {
 		this.contratos = contratos;
 	}
-	
-	
-	
-	
 }
